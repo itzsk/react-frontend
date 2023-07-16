@@ -192,18 +192,18 @@ const ProfileContent = ({ active }) => {
       )}
 
       {/* order  */}
-      {/* {active === 2 && (
+       {active === 2 && (
         <div>
           <AllOrders />
         </div>
-      )} */}
+      )} 
 
       {/* refund  */}
-      {/* {active === 3 && (
+       {active === 3 && (
         <div>
           <AllRrfundOrders />
         </div>
-      )} */}
+      )} 
 
       {/* Payment  */}
       {active === 4 && (
@@ -223,167 +223,167 @@ const ProfileContent = ({ active }) => {
 };
 
 
-// const AllOrders = () => {
-//   const orders = [          // static data for orders 
-//     {
-//       _id: "09458045803845gaa0495",
-//       orderItems: [
-//         {name: "iPhone 14 pro max",},
-//       ],
-//       totalPrice : 120,
-//       orderStatus: "Processing",
-//     },
-//   ];
+const AllOrders = () => {
+  const orders = [          // static data for orders 
+    {
+      _id: "09458045803845gaa0495",
+      orderItems: [
+        {name: "iPhone 14 pro max",},
+      ],
+      totalPrice : 120,
+      orderStatus: "Processing",
+    },
+  ];
 
-//   const columns = [
-//     { field: "id", handleName: "Order ID", minWidth: 150, flex: 0.7 },
-//     {
-//       field: "status",
-//       headerName: "Status",
-//       minWidth: 130,
-//       flex: 0.7,
-//       cellClassName: (params) => {
-//         return params.getValue(params.id, "status") === "Delivered" ? "greenColor" : "redColor";
-//       },
-//     },
-//     {
-//       field: "itemsQty",
-//       headerName: "Items Qty",
-//       type: "number",
-//       minWidth: 130,
-//       flex: 0.7,
-//     },
-//     {
-//       field: "total",
-//       headerName: "Total",
-//       type: "number",
-//       minWidth: 130,
-//       flex: 0.8,
-//     },
-//     {
-//       field: " ",
-//       flex: 1,
-//       minWidth: 150,
-//       headerName: "",
-//       type: "number",
-//       renderCell: (params) => {
-//         return (
-//           <>
-//             <Link to={`/order/${params.id}`}>
-//               <Button>
-//                 <AiOutlineArrowRight size={20} />
-//               </Button>
-//             </Link>
-//           </>
-//         );
-//       },
-//     },
-//   ];
+  const columns = [
+    { field: "id", handleName: "Order ID", minWidth: 150, flex: 0.7 },
+    {
+      field: "status",
+      headerName: "Status",
+      minWidth: 130,
+      flex: 0.7,
+      cellClassName: (params) => {
+        return params.getValue(params.id, "status") === "Delivered" ? "greenColor" : "redColor";
+      },
+    },
+    {
+      field: "itemsQty",
+      headerName: "Items Qty",
+      type: "number",
+      minWidth: 130,
+      flex: 0.7,
+    },
+    {
+      field: "total",
+      headerName: "Total",
+      type: "number",
+      minWidth: 130,
+      flex: 0.8,
+    },
+    {
+      field: " ",
+      flex: 1,
+      minWidth: 150,
+      headerName: "",
+      type: "number",
+      renderCell: (params) => {
+        return (
+          <>
+            <Link to={`/order/${params.id}`}>
+              <Button>
+                <AiOutlineArrowRight size={20} />
+              </Button>
+            </Link>
+          </>
+        );
+      },
+    },
+  ];
 
-//   const row = [];
+  const row = [];
 
-//   orders && orders.forEach((item) => {
-//     row.push ({
-//       id: item._id,
-//       itemsQty: item.orderItems.length,
-//       total: "US$ " + item.totalPrice,
-//       status: item.orderStatus,
-//     });
-//   });
+  orders && orders.forEach((item) => {
+    row.push ({
+      id: item._id,
+      itemsQty: item.orderItems.length,
+      total: "US$ " + item.totalPrice,
+      status: item.orderStatus,
+    });
+  });
 
-//   return (
-//     <div className="pl-8 pt1">
-//       <DataGrid 
-//       rows={row}
-//       columns={columns}
-//       pageSize={10}
-//       disableSelectionOnclick
-//       authoHeight
-//       />
-//     </div>
-//   )
-// }
+  return (
+    <div className="pl-8 pt1">
+      <DataGrid 
+      rows={row}
+      columns={columns}
+      pageSize={10}
+      disableSelectionOnclick
+      authoHeight
+      />
+    </div>
+  )
+}
 
-// const AllRrfundOrders = () => {
-//   const orders = [          // static data for return
-//     {
-//       _id: "09458045803845gaa0495",
-//       orderItems: [
-//         {name: "iPhone 14 pro max",},
-//       ],
-//       totalPrice : 120,
-//       orderStatus: "Processing",
-//     },
-//   ];
+const AllRrfundOrders = () => {
+  const orders = [          // static data for return
+    {
+      _id: "09458045803845gaa0495",
+      orderItems: [
+        {name: "iPhone 14 pro max",},
+      ],
+      totalPrice : 120,
+      orderStatus: "Processing",
+    },
+  ];
 
-//   const columns = [
-//     { field: "id", handleName: "Order ID", minWidth: 150, flex: 0.7 },
-//     {
-//       field: "status",
-//       headerName: "Status",
-//       minWidth: 130,
-//       flex: 0.7,
-//       cellClassName: (params) => {
-//         return params.getValue(params.id, "status") === "Delivered" ? "greenColor" : "redColor";
-//       },
-//     },
-//     {
-//       field: "itemsQty",
-//       headerName: "Items Qty",
-//       type: "number",
-//       minWidth: 130,
-//       flex: 0.7,
-//     },
-//     {
-//       field: "total",
-//       headerName: "Total",
-//       type: "number",
-//       minWidth: 130,
-//       flex: 0.8,
-//     },
-//     {
-//       field: " ",
-//       flex: 1,
-//       minWidth: 150,
-//       headerName: "",
-//       type: "number",
-//       renderCell: (params) => {
-//         return (
-//           <>
-//             <Link to={`/order/${params.id}`}>
-//               <Button>
-//                 <AiOutlineArrowRight size={20} />
-//               </Button>
-//             </Link>
-//           </>
-//         );
-//       },
-//     },
-//   ];
+  const columns = [
+    { field: "id", handleName: "Order ID", minWidth: 150, flex: 0.7 },
+    {
+      field: "status",
+      headerName: "Status",
+      minWidth: 130,
+      flex: 0.7,
+      cellClassName: (params) => {
+        return params.getValue(params.id, "status") === "Delivered" ? "greenColor" : "redColor";
+      },
+    },
+    {
+      field: "itemsQty",
+      headerName: "Items Qty",
+      type: "number",
+      minWidth: 130,
+      flex: 0.7,
+    },
+    {
+      field: "total",
+      headerName: "Total",
+      type: "number",
+      minWidth: 130,
+      flex: 0.8,
+    },
+    {
+      field: " ",
+      flex: 1,
+      minWidth: 150,
+      headerName: "",
+      type: "number",
+      renderCell: (params) => {
+        return (
+          <>
+            <Link to={`/order/${params.id}`}>
+              <Button>
+                <AiOutlineArrowRight size={20} />
+              </Button>
+            </Link>
+          </>
+        );
+      },
+    },
+  ];
 
-//   const row = [];
+  const row = [];
   
-//   orders &&
-//   orders.forEach((item) => {
-//     row.push({
-//       id: item._id,
-//       itemsQty: item.orderItems.length,
-//       total: "US$ " + item.totalPrice,
-//       status: item.orderStatus,
-//     });
-//   });
-//   return (
-//     <div className="">
-//       <DataGrid 
-//         rows={row}
-//         columns={columns}
-//         pageSize={10}
-//         authoHeight
-//         disableSelectionOnclick
-//         />
-//     </div>
-//   )
-// }
+  orders &&
+  orders.forEach((item) => {
+    row.push({
+      id: item._id,
+      itemsQty: item.orderItems.length,
+      total: "US$ " + item.totalPrice,
+      status: item.orderStatus,
+    });
+  });
+  return (
+    <div className="">
+      <DataGrid 
+        rows={row}
+        columns={columns}
+        pageSize={10}
+        authoHeight
+        disableSelectionOnclick
+        />
+    </div>
+  )
+}
 
 const PaymentMethod =() => {
   return (
