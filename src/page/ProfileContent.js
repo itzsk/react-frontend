@@ -4,6 +4,8 @@ import { ImagetoBase64 } from "../Utility/ImagetoBase64";
 import { Link } from 'react-router-dom';
 import { BiShow, BiHide } from "react-icons/bi";
 import { AiOutlineArrowRight, AiOutlineDelete } from "react-icons/ai";
+import { Button } from "@mui/material";
+import { DataGrid } from "@material-ui/data-grid";
 import "./Profile.css";
 
 const ProfileContent = ({ active }) => {
@@ -192,18 +194,18 @@ const ProfileContent = ({ active }) => {
       )}
 
       {/* order  */}
-       {active === 2 && (
+      {active === 2 && (
         <div>
           <AllOrders />
         </div>
-      )} 
+      )}
 
       {/* refund  */}
-       {active === 3 && (
+      {active === 3 && (
         <div>
           <AllRrfundOrders />
         </div>
-      )} 
+      )}
 
       {/* Payment  */}
       {active === 4 && (
@@ -387,27 +389,27 @@ const AllRrfundOrders = () => {
 
 const PaymentMethod =() => {
   return (
-  <div className="w-full px-5">
-    <div className="flex w-full items-center justify-between">
-      <h1 className="text-[25px] font-[600] text-[#000000ba] pb-2">
+  <div className="main_payment">
+    <div className="payment_content">
+      <h1>
         Payment Method
       </h1>
       <div className="add_button">
-        <span className="text-[#fff]">Add New</span>
+        <span>Add New</span>
       </div>
     </div>
     <br />
-    <div className="bg-white h-[70px] rounded-[4px] flex items-center px-3 shadow justify-between pr-10">
-      <div className="flex items-center">
+    <div className="main_cardUser">
+      <div className="cardUser">
         <img src="https://bonik-react.vercel.app/assets/images/payment-methods/Visa.svg" alt="" />
-        <h5 className="pl-5">Shahriar Sajeeb</h5>
+        <h5 className="name">Shahriar Sajeeb</h5>
       </div>
-      <div className="pl-8 flex item-center">
+      <div className="card_number">
         <h6>1234 **** **** ****</h6>
         <h5 className="pl-6">08/2025</h5>
       </div>
-      <div className="min-w-[10%] flex items-center justify-between pl-8">
-        <AiOutlineDelete size={25} className="cursor-pointer" />
+      <div className="delete_icon">
+        <AiOutlineDelete size={25} className="icon" />
       </div>
     </div>
   </div>
@@ -416,25 +418,25 @@ const PaymentMethod =() => {
 
 const Address = () => {
   return (
-    <div className="w-full px-5">
-    <div className="flex w-full items-center justify-between">
-      <h1 className="text-[25px] font-[600] text-[#000000ba] pb-2">
+    <div className="main_address">
+    <div className="address_content">
+      <h1>
         My Addresses
       </h1>
       <div className="add_button">
-        <span className="text-[#fff]">Add New</span>
+        <span>Add New</span>
       </div>
     </div>
     <br />
-    <div className="bg-white h-[70px] rounded-[4px] flex items-center px-3 shadow justify-between pr-10">
-      <div className="flex items-center">        
-        <h5 className="pl-5">Default</h5>
+    <div className="main_addUser">
+      <div className="addUser">        
+        <h5>Default</h5>
       </div>
-      <div className="pl-8 flex item-center">
+      <div className="location">
         <h6>barasat dakbanglo, barasat, kolkata-700128</h6>      
       </div>
-      <div className="min-w-[10%] flex items-center justify-between pl-8">
-        <AiOutlineDelete size={25} className="cursor-pointer" />
+      <div className="delete_icon">
+        <AiOutlineDelete size={25} className="icon" />
       </div>
     </div>
   </div>
